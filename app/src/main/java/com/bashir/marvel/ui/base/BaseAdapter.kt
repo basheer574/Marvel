@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import androidx.databinding.library.baseAdapters.BR
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import androidx.databinding.library.baseAdapters.BR
 
 abstract class BaseAdapter<T>(
     private var items: List<T>,
@@ -31,8 +31,8 @@ abstract class BaseAdapter<T>(
         val currentItem = items[position]
         when (holder) {
             is ItemViewHolder -> {
-                holder.binding.setVariable(BR.item, currentItem)
-                holder.binding.setVariable(BR.listener, listener)
+               holder.binding.setVariable(BR.item, currentItem)
+                //holder.binding.setVariable(BR.listener, listener)
             }
         }
     }
