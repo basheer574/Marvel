@@ -1,4 +1,4 @@
-package com.BasheerApps.Marvel
+package com.bashir.marvel
 
 import org.junit.Test
 

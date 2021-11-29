@@ -1,4 +1,4 @@
-package com.BasheerApps.Marvel
+package com.bashir.marvel
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
