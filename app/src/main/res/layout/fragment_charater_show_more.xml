@@ -20,8 +20,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:text="@string/characters"
+            android:fontFamily="@font/marvel_bold"
             android:textColor="@color/app_color"
-            android:textSize="20sp"
+            android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

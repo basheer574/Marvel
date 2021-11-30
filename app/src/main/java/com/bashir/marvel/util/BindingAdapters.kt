@@ -5,7 +5,9 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import coil.transform.CircleCropTransformation
 import coil.transform.RoundedCornersTransformation
+import coil.transform.Transformation
 import com.bashir.marvel.R
 import com.bashir.marvel.ui.base.BaseAdapter
 
@@ -42,10 +44,10 @@ fun <T> setRecyclerItems(view: RecyclerView, items: List<T>?) {
     }
 }
 @BindingAdapter(value = ["imageUrl"])
-fun ImageView.setImageFromUrl(url: String?){
-    this.load(url){
+fun setImageFromUrl(view: ImageView,url: String?){
+    view.load(url){
         crossfade(true)
         placeholder(R.drawable.ic_image_place_holder)
-        transformations(RoundedCornersTransformation())
+        transformations(CircleCropTransformation())
     }
 }
