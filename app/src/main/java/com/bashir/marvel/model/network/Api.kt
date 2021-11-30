@@ -1,4 +1,4 @@
-package com.bashir.marvel.data.network
+package com.bashir.marvel.model.network
 
 import com.bashir.marvel.util.Constants
 import retrofit2.Retrofit
@@ -10,7 +10,6 @@ object Api {
         .baseUrl(Constants.BASE_URL)
         .client(Client.apiClient.build())
         .addConverterFactory(GsonConverterFactory.create())
-
         .build()
 
     val marvelApi = retrofit.create(MarvelApiService::class.java)

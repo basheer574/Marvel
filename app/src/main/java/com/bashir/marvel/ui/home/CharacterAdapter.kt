@@ -6,5 +6,5 @@ import com.bashir.marvel.ui.base.BaseAdapter
 
 class CharacterAdapter(items: List<CharacterDio>, listener: CharacterListener)
     : BaseAdapter<CharacterDio>(items, listener) {
-    override val layoutId: Int = R.layout.item_character
+    override val layoutId: Int = R.layout.item_character_show_more
 }

@@ -3,7 +3,7 @@ package com.bashir.marvel.data.remote.response.character
 
 import com.google.gson.annotations.SerializedName
 
-data class Data(
+data class CharacterData(
     @SerializedName("results")
-    val results: List<Result>?
+    val characterDios: List<CharacterDio>?
 )

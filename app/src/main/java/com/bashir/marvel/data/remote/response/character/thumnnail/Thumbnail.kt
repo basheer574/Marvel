@@ -1,4 +1,4 @@
-package com.bashir.marvel.data.remote.response.thumnnail
+package com.bashir.marvel.data.remote.response.character.thumnnail
 
 
 import com.google.gson.annotations.SerializedName

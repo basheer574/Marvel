@@ -9,7 +9,7 @@ import com.bashir.marvel.R
 import com.bashir.marvel.databinding.FragmentHomeBinding
 import com.bashir.marvel.ui.base.BaseFragment
 
-class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home){
     override val viewModel by activityViewModels<HomeViewModel>()
     override val bindingInflater: (LayoutInflater, Int, ViewGroup?, Boolean) -> FragmentHomeBinding
         = DataBindingUtil::inflate

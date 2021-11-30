@@ -13,5 +13,8 @@ class MarvelActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_marvel)
+
+        Log.i("TS",Constants.TS)
+        Log.i("Time Stamps",Constants.HASH_SIGNATURE)
     }
 }

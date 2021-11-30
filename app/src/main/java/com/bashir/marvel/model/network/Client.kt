@@ -1,4 +1,4 @@
-package com.bashir.marvel.data.network
+package com.bashir.marvel.model.network
 
 import com.bashir.marvel.util.Constants
 import okhttp3.Interceptor
@@ -12,7 +12,7 @@ object Client {
                 .newBuilder()
                 .addQueryParameter("ts", Constants.TS)
                 .addQueryParameter("apikey",Constants.PUBLIC_API_KEY)
-                .addQueryParameter("hash",Constants.HASH)
+                .addQueryParameter("hash",Constants.HASH_SIGNATURE)
                 .build()
             val request = origin.newBuilder().url(originHttpUrl).build()
             chain.proceed(request)
