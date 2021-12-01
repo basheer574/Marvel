@@ -1,6 +1,7 @@
 package com.bashir.marvel.data.remote.response
 
 
+import com.bashir.marvel.data.remote.response.character.CharacterData
 import com.google.gson.annotations.SerializedName
 
 data class BaseMarvel<T>(
@@ -13,7 +14,7 @@ data class BaseMarvel<T>(
     @SerializedName("copyright")
     val copyright: String?,
     @SerializedName("data")
-    val data: T?,
+    val data: CharacterData?,
     @SerializedName("etag")
     val etag: String?,
     @SerializedName("status")

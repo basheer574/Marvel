@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Marvel"
-        tools:targetApi="m">
+        tools:targetApi="m"
+        android:fullBackupContent="true">
         <activity
             android:name="com.bashir.marvel.ui.MarvelActivity"
             android:exported="true">

@@ -4,7 +4,6 @@ import java.math.BigInteger
 import java.security.MessageDigest
 import java.util.*
 
-
 object Constants {
     const val BASE_URL = "https://gateway.marvel.com/v1/public/"
     const val CHARACTER_TABLE_NAME = "CHARACTERS"
@@ -18,5 +17,4 @@ object Constants {
         val md = MessageDigest.getInstance("MD5")
         return BigInteger(1, md.digest(toByteArray())).toString(16).padStart(32, '0')
     }
-    const val HASH = "3ef3355aa1706d628e4b9af8a6d16b85"
 }

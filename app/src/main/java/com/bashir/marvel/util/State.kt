@@ -1,9 +1,16 @@
 package com.bashir.marvel.util
 
-sealed class State<out T>{
-    data class Success<T>(val data: T) : State<T>()
-    data class Error(val message: String) : State<Nothing>()
-    object Loading : State<Nothing>()
+sealed class State<out T>(val data: T?) {
 
-    fun toData() = if (this is Success) data else null
+    class Success<T>(data: T) : State<T>(data)
+    class Error(val throwable: Throwable) : State<Nothing>(null)
+    object Loading : State<Nothing>(null)
+
+    override fun toString(): String {
+        return when (this) {
+            is Success -> "Success: $data"
+            is Error -> "Error: ${throwable.message}"
+            Loading -> "Loading"
+        }
+    }
 }
