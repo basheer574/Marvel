@@ -8,12 +8,14 @@ import com.bashir.marvel.data.local.entity.CharacterEntity
 import com.bashir.marvel.data.repository.MarvelRepositoryImpl
 import com.bashir.marvel.model.Character
 import com.bashir.marvel.util.State
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class CharacterViewModel : ViewModel() , CharacterListener {
 
     private val repository = MarvelRepositoryImpl()
-    val character: LiveData<State<List<Character>?>> = repository.getCharacters().asLiveData()
+    val character: LiveData<State<List<Character>?>> = repository.getCharacters()
+        .asLiveData(Dispatchers.IO)
 
     init {
         viewModelScope.launch {
