@@ -21,10 +21,10 @@ class MarvelRepositoryImpl : MarvelRepository {
                 if (result.isSuccessful) {
                     emit(State.Success(result.body()))
                 } else {
-                    emit(State.Error(Throwable()))
+                    emit(State.Error("Error"))
                 }
             } catch (e: Exception) {
-                State.Error(Throwable())
+                State.Error("Error")
             }
         }
     }
