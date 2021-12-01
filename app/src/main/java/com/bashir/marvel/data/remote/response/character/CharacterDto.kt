@@ -7,7 +7,7 @@ import com.bashir.marvel.data.remote.response.character.stories.Stories
 import com.bashir.marvel.data.remote.response.character.thumnnail.Thumbnail
 import com.google.gson.annotations.SerializedName
 
-data class CharacterDio(
+data class CharacterDto(
     @SerializedName("comics")
     val comics: Comics?,
     @SerializedName("description")

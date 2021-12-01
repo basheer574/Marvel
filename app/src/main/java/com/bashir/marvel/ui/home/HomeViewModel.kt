@@ -1,14 +1,25 @@
 package com.bashir.marvel.ui.home
 
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
+import com.bashir.marvel.data.local.entity.CharacterEntity
 import com.bashir.marvel.model.repository.MarvelRepository
+import com.bashir.marvel.model.repository.MarvelRepositoryImpl
+import com.bashir.marvel.util.State
+import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() ,CharacterListener{
-    private val repository = MarvelRepository
-    val character = repository.getCharacters().asLiveData()
+    private val repository = MarvelRepositoryImpl()
+    val character: LiveData<List<CharacterEntity>> = repository.getCharacters().asLiveData()
 
+    init {
+        viewModelScope.launch {
+            repository.refreshCharacters()
+        }
+    }
     override fun onCharacterSelected(id: Int) {
 
     }

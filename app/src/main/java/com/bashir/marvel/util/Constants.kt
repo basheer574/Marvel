@@ -7,7 +7,7 @@ import java.util.*
 
 object Constants {
     const val BASE_URL = "https://gateway.marvel.com/v1/public/"
-    const val DATABASE_TABLE_NAME = "MARVEL"
+    const val CHARACTER_TABLE_NAME = "CHARACTERS"
     const val DATABASE_VERSION = 1
     const val PUBLIC_API_KEY = "7ef86966d28d7810daec54de0f9e7691"
     const val PRIVATE_API_KEY = "56ff02b27b46eb93f351eb1f5805a936b4c3b044"

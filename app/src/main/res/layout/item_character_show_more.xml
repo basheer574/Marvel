@@ -6,7 +6,7 @@
     <data>
         <variable
             name="item"
-            type="com.bashir.marvel.data.remote.response.character.CharacterDio" />
+            type="com.bashir.marvel.data.local.entity.CharacterEntity" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -24,7 +24,7 @@
 
             <ImageView
                 android:id="@+id/character_image"
-                imageUrl="@{item.thumbnail.path.concat(`.`).concat(item.thumbnail.extension)}"
+                imageUrl="@{item.imageUrl}"
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:layout_margin="16dp"
