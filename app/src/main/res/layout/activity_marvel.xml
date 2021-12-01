@@ -14,7 +14,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/parent_container"
-            android:name="com.bashir.marvel.ui.showmore.character.CharacterShowMoreFragment"
+            android:name="com.bashir.marvel.ui.character.CharacterFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:defaultNavHost="true"

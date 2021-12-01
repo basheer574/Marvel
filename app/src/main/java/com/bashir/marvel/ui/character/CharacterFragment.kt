@@ -1,4 +1,4 @@
-package com.bashir.marvel.ui.showmore.character
+package com.bashir.marvel.ui.character
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,12 +7,11 @@ import androidx.fragment.app.activityViewModels
 import com.bashir.marvel.R
 import com.bashir.marvel.databinding.FragmentCharaterShowMoreBinding
 import com.bashir.marvel.ui.base.BaseFragment
-import com.bashir.marvel.ui.home.CharacterAdapter
 import com.bashir.marvel.ui.home.HomeViewModel
 
-class CharacterShowMoreFragment :
+class CharacterFragment :
     BaseFragment<FragmentCharaterShowMoreBinding>(R.layout.fragment_charater_show_more) {
-    override val viewModel by activityViewModels<HomeViewModel>()
+    override val viewModel by activityViewModels<CharacterViewModel>()
     override val bindingInflater: (LayoutInflater, Int, ViewGroup?, Boolean) ->
 
     FragmentCharaterShowMoreBinding = DataBindingUtil::inflate
@@ -23,5 +22,4 @@ class CharacterShowMoreFragment :
             it.characterRecyclerView.adapter = CharacterAdapter(mutableListOf(),viewModel)
         }
     }
-
 }

@@ -11,16 +11,6 @@ import com.bashir.marvel.model.repository.MarvelRepositoryImpl
 import com.bashir.marvel.util.State
 import kotlinx.coroutines.launch
 
-class HomeViewModel : ViewModel() ,CharacterListener{
-    private val repository = MarvelRepositoryImpl()
-    val character: LiveData<List<CharacterEntity>> = repository.getCharacters().asLiveData()
+class HomeViewModel : ViewModel(){
 
-    init {
-        viewModelScope.launch {
-            repository.refreshCharacters()
-        }
-    }
-    override fun onCharacterSelected(id: Int) {
-
-    }
 }

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.bashir.marvel.ui.home.HomeViewModel" />
+            type="com.bashir.marvel.ui.character.CharacterViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

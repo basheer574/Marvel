@@ -1,4 +1,4 @@
-package com.bashir.marvel.ui.home
+package com.bashir.marvel.ui.character
 
 import com.bashir.marvel.ui.base.BaseAdapter
 
