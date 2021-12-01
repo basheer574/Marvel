@@ -1,4 +1,4 @@
-package com.bashir.marvel.model.network
+package com.bashir.marvel.data.network
 
 import com.bashir.marvel.data.remote.response.BaseMarvel
 import com.bashir.marvel.data.remote.response.character.CharacterData

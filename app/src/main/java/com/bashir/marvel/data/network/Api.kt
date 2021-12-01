@@ -1,7 +1,6 @@
-package com.bashir.marvel.model.network
+package com.bashir.marvel.data.network
 
 import com.bashir.marvel.BuildConfig
-import com.bashir.marvel.util.Constants
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

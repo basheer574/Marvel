@@ -1,8 +1,7 @@
-package com.bashir.marvel.model.network
+package com.bashir.marvel.data.network
 
 
 import com.bashir.marvel.BuildConfig
-import com.bashir.marvel.util.Constants
 import com.bashir.marvel.util.Constants.md5
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
