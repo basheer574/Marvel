@@ -15,7 +15,5 @@ class MarvelActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_marvel)
         MarvelDataBase.init(applicationContext)
-        Log.i("TS",Constants.TS)
-        Log.i("Time Stamps",Constants.HASH_SIGNATURE)
     }
 }
