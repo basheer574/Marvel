@@ -3,17 +3,15 @@ package com.bashir.marvel.ui.character
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
-import com.bashir.marvel.data.local.entity.CharacterEntity
+import com.bashir.marvel.data.repository.MarvelRepository
 import com.bashir.marvel.data.repository.MarvelRepositoryImpl
 import com.bashir.marvel.model.Character
 import com.bashir.marvel.util.State
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
-class CharacterViewModel : ViewModel() , CharacterListener {
+class CharacterViewModel(repository: MarvelRepository) : ViewModel() , CharacterListener {
 
-    private val repository = MarvelRepositoryImpl()
+
     val character: LiveData<State<List<Character>?>> = repository.getCharacters()
         .asLiveData(Dispatchers.IO)
     override fun onCharacterSelected(id: Int) {
