@@ -16,12 +16,6 @@ class CharacterViewModel : ViewModel() , CharacterListener {
     private val repository = MarvelRepositoryImpl()
     val character: LiveData<State<List<Character>?>> = repository.getCharacters()
         .asLiveData(Dispatchers.IO)
-
-    init {
-        viewModelScope.launch {
-            repository.refreshCharacters()
-        }
-    }
     override fun onCharacterSelected(id: Int) {
 
     }

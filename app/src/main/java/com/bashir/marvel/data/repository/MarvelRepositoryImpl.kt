@@ -46,18 +46,4 @@ class MarvelRepositoryImpl : MarvelRepository {
             }
         }
     }
-
-    override suspend fun refreshCharacters() {
-        val response = marvelApiService.getCharacters()
-        val items = response.body()?.data?.characterDtos?.map {
-            CharacterEntity(
-                id = it.id?.toLong() ?: 0L,
-                name = it.name ?: "",
-                description = it.description ?: "no description",
-                modified = it.modified ?: "",
-                imageUrl = "${it.thumbnail?.path}.${it.thumbnail?.extension}"
-            )
-        }
-        items?.let { characterDao.addCharacters(it) }
-    }
 }

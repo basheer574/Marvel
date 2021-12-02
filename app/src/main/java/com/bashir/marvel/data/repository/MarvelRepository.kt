@@ -7,5 +7,4 @@ import kotlinx.coroutines.flow.Flow
 
 interface MarvelRepository {
     fun getCharacters() : Flow<State<List<Character>?>>
-    suspend fun refreshCharacters()
 }
