@@ -5,8 +5,10 @@ import com.bashir.marvel.data.remote.response.character.CharacterData
 import com.bashir.marvel.data.remote.response.comics.ComicsData
 import com.bashir.marvel.data.remote.response.series.SeriesData
 import com.bashir.marvel.data.remote.response.stories.StoriesData
+import dagger.Provides
 import retrofit2.Response
 import retrofit2.http.GET
+
 
 interface MarvelApiService {
     @GET("v1/public/characters")

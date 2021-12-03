@@ -3,6 +3,7 @@ package com.bashir.marvel.data.mapper.character
 import com.bashir.marvel.data.mapper.base.BaseMapper
 import com.bashir.marvel.data.remote.response.character.CharacterDto
 import com.bashir.marvel.model.Character
+import dagger.Provides
 
 class CharacterMapper : BaseMapper<CharacterDto,Character> {
     override fun toModel(type: CharacterDto): Character {

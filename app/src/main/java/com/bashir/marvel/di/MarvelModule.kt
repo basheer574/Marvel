@@ -23,6 +23,6 @@ object MarvelModule {
     }
 
     @Provides
-    fun provideCharacterMapper() = CharacterMapper()
+    fun provideCharacterMapper(): CharacterMapper = CharacterMapper()
 
 }

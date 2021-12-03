@@ -47,11 +47,11 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideAuthInterceptor() = MarvelInterceptor()
+    fun provideAuthInterceptor(): MarvelInterceptor = MarvelInterceptor()
 
     @Singleton
     @Provides
-    fun provideLoggingInterceptor() = HttpLoggingInterceptor().apply {
+    fun provideLoggingInterceptor(): HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
         setLevel(HttpLoggingInterceptor.Level.BODY)
     }
 

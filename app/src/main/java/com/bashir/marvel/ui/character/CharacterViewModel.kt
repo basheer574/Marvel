@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.bashir.marvel.data.repository.MarvelRepository
-import com.bashir.marvel.data.repository.MarvelRepositoryImpl
 import com.bashir.marvel.model.Character
 import com.bashir.marvel.util.State
 import dagger.hilt.android.lifecycle.HiltViewModel
