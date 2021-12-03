@@ -4,19 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import com.bashir.marvel.R
-import com.bashir.marvel.data.mapper.character.CharacterMapper
-import com.bashir.marvel.data.network.Api
-import com.bashir.marvel.data.repository.MarvelRepository
-import com.bashir.marvel.data.repository.MarvelRepositoryImpl
 import com.bashir.marvel.databinding.FragmentCharaterShowMoreBinding
-import com.bashir.marvel.ui.MarvelViewModelFactory
 import com.bashir.marvel.ui.base.BaseFragment
-import com.bashir.marvel.ui.home.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
-import javax.inject.Named
 
 @AndroidEntryPoint
 class CharacterFragment :
