@@ -9,8 +9,8 @@
         android:name="com.bashir.marvel.ui.home.HomeFragment"
         android:label="HomeFragment" />
     <fragment
-        android:id="@+id/characterShowMoreFragment"
+        android:id="@+id/characterFragment"
         android:name="com.bashir.marvel.ui.character.CharacterFragment"
-        android:label="CharacterShowMoreFragment" />
+        android:label="CharacterFragment" />
 
 </navigation>

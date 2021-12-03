@@ -9,7 +9,7 @@ import com.bashir.marvel.databinding.FragmentCharaterShowMoreBinding
 import com.bashir.marvel.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+
 class CharacterFragment :
     BaseFragment<FragmentCharaterShowMoreBinding>(R.layout.fragment_charater_show_more) {
     override val viewModel by activityViewModels<CharacterViewModel>()
