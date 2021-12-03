@@ -25,6 +25,4 @@ object MarvelModule {
     @Provides
     fun provideCharacterMapper() = CharacterMapper()
 
-    @Provides
-    fun provideMarvelService() = Api.marvelApi
 }

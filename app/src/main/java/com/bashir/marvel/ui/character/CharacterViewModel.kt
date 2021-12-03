@@ -12,7 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 
 @HiltViewModel
-class CharacterViewModel @Inject constructor(private val repository: MarvelRepository)
+class CharacterViewModel @Inject constructor(repository: MarvelRepository)
     : ViewModel() , CharacterListener {
     val character: LiveData<State<List<Character>?>> = repository.getCharacters()
         .asLiveData(Dispatchers.IO)
