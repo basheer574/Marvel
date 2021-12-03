@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 import com.bashir.marvel.data.local.dao.CharacterDao
 import com.bashir.marvel.data.local.entity.CharacterEntity
 import com.bashir.marvel.util.Constants
+import dagger.hilt.android.qualifiers.ApplicationContext
 
 @Database(entities = [CharacterEntity::class], version = Constants.DATABASE_VERSION)
 abstract class MarvelDataBase  : RoomDatabase(){
@@ -16,12 +17,10 @@ abstract class MarvelDataBase  : RoomDatabase(){
         private const val databaseName = "MarvelDatabase"
         private var instance: MarvelDataBase? = null
 
-        fun init(context: Context): MarvelDataBase{
+        fun init(@ApplicationContext context: Context): MarvelDataBase{
             return instance?: synchronized(this)
             {buildDatabase(context).also{database-> instance = database}}
         }
-
-        fun getInstance() = instance!!
 
         private fun buildDatabase(context: Context) : MarvelDataBase{
             return Room.databaseBuilder(context,MarvelDataBase::class.java, databaseName)

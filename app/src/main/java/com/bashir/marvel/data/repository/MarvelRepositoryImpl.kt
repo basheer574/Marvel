@@ -7,14 +7,12 @@ import com.bashir.marvel.util.State
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.Response
+import javax.inject.Inject
 
-class MarvelRepositoryImpl(
+class MarvelRepositoryImpl @Inject constructor(
     private val marvelApiService: MarvelApiService,
     private val characterMapper: CharacterMapper
 ) : MarvelRepository {
-
-    //private val marvelApiService = Api.marvelApi
-    //private val characterMapper = CharacterMapper()
 
     private fun <T> wrapWithFlow(endPointResponse: suspend () -> Response<T>): Flow<State<T?>> {
         return flow {

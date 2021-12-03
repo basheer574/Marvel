@@ -7,13 +7,16 @@ import com.bashir.marvel.data.repository.MarvelRepository
 import com.bashir.marvel.data.repository.MarvelRepositoryImpl
 import com.bashir.marvel.model.Character
 import com.bashir.marvel.util.State
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import javax.inject.Inject
 
-class CharacterViewModel(repository: MarvelRepository) : ViewModel() , CharacterListener {
-
-
+@HiltViewModel
+class CharacterViewModel @Inject constructor(private val repository: MarvelRepository)
+    : ViewModel() , CharacterListener {
     val character: LiveData<State<List<Character>?>> = repository.getCharacters()
         .asLiveData(Dispatchers.IO)
+
     override fun onCharacterSelected(id: Int) {
 
     }

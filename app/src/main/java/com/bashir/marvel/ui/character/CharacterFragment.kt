@@ -14,13 +14,14 @@ import com.bashir.marvel.databinding.FragmentCharaterShowMoreBinding
 import com.bashir.marvel.ui.MarvelViewModelFactory
 import com.bashir.marvel.ui.base.BaseFragment
 import com.bashir.marvel.ui.home.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
+import javax.inject.Named
 
+@AndroidEntryPoint
 class CharacterFragment :
     BaseFragment<FragmentCharaterShowMoreBinding>(R.layout.fragment_charater_show_more) {
-    private val repository = MarvelRepositoryImpl(Api.marvelApi, CharacterMapper())
-
-    override val viewModel by activityViewModels<CharacterViewModel>
-    { MarvelViewModelFactory(repository) }
+    override val viewModel by activityViewModels<CharacterViewModel>()
     override val bindingInflater: (LayoutInflater, Int, ViewGroup?, Boolean) ->
 
     FragmentCharaterShowMoreBinding = DataBindingUtil::inflate
