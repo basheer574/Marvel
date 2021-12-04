@@ -1,7 +1,7 @@
-package com.bashir.marvel.data.remote.response
+package com.bashir.marvel.data.remote.base
 
 
-import com.bashir.marvel.data.remote.response.character.CharacterData
+import com.bashir.marvel.data.remote.container.DataContainer
 import com.google.gson.annotations.SerializedName
 
 data class BaseMarvel<T>(

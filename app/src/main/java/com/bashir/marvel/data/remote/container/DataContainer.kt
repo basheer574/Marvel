@@ -1,4 +1,4 @@
-package com.bashir.marvel.data.remote.response
+package com.bashir.marvel.data.remote.container
 
 import com.google.gson.annotations.SerializedName
 

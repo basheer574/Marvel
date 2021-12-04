@@ -1,26 +1,24 @@
 package com.bashir.marvel.data.network
 
-import com.bashir.marvel.data.remote.response.BaseMarvel
-import com.bashir.marvel.data.remote.response.character.CharacterData
+import com.bashir.marvel.data.remote.base.BaseMarvel
 import com.bashir.marvel.data.remote.response.character.CharacterDto
-import com.bashir.marvel.data.remote.response.comics.ComicsData
-import com.bashir.marvel.data.remote.response.series.SeriesData
-import com.bashir.marvel.data.remote.response.stories.StoriesData
-import dagger.Provides
+import com.bashir.marvel.data.remote.response.comics.ComicsDto
+import com.bashir.marvel.data.remote.response.series.SeriesDto
+import com.bashir.marvel.data.remote.response.stories.StoriesDto
 import retrofit2.Response
 import retrofit2.http.GET
 
 
 interface MarvelApiService {
-    @GET("v1/public/characters")
+    @GET("characters")
     suspend fun getCharacters() : Response<BaseMarvel<CharacterDto>>
 
     @GET("v1/public/comics")
-    suspend fun getComics() : Response<BaseMarvel<ComicsData>>
+    suspend fun getComics() : Response<BaseMarvel<ComicsDto>>
 
     @GET("v1/public/series")
-    suspend fun getSeries() : Response<BaseMarvel<SeriesData>>
+    suspend fun getSeries() : Response<BaseMarvel<SeriesDto>>
 
     @GET("v1/public/stories")
-    suspend fun getStories() : Response<BaseMarvel<StoriesData>>
+    suspend fun getStories() : Response<BaseMarvel<StoriesDto>>
 }

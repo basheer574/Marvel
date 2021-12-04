@@ -24,7 +24,7 @@ android {
 
         buildConfigField "String", "PUPLIC_API_KEY",localProperties['publicApiKey']
         buildConfigField "String", "PRIVATE_API_KEY",localProperties['privateApiKey']
-        buildConfigField "String", "BASE_URL", "\"https://gateway.marvel.com/\""
+        buildConfigField "String", "BASE_URL", "\"https://gateway.marvel.com/v1/public/\""
     }
 
     buildTypes {
