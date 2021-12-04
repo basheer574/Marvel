@@ -1,12 +1,13 @@
 package com.bashir.marvel.data.repository
 
-import com.bashir.marvel.data.local.MarvelDataBase
+
 import com.bashir.marvel.data.mapper.character.CharacterMapper
 import com.bashir.marvel.data.network.MarvelApiService
 import com.bashir.marvel.model.Character
 import com.bashir.marvel.util.State
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
 import retrofit2.Response
 import javax.inject.Inject
 

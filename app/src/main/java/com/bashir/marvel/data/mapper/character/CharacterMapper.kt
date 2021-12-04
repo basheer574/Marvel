@@ -21,5 +21,4 @@ class CharacterMapper : BaseMapper<CharacterDto,Character> {
             urls = type.urls
         )
     }
-
 }

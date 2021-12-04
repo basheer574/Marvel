@@ -9,7 +9,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.bashir.marvel.R
 import com.bashir.marvel.data.local.MarvelDataBase
 import com.bashir.marvel.databinding.ActivityMarvelBinding
-import com.bashir.marvel.util.Constants
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
