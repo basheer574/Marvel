@@ -6,7 +6,7 @@ import com.bashir.marvel.model.Character
 import dagger.Provides
 
 class CharacterMapper : BaseMapper<CharacterDto,Character> {
-    override fun toModel(type: CharacterDto): Character {
+    override fun map(type: CharacterDto): Character {
         return Character(
             id = type.id,
             name = type.name,
@@ -22,18 +22,4 @@ class CharacterMapper : BaseMapper<CharacterDto,Character> {
         )
     }
 
-    override fun toResponse(type: Character): CharacterDto {
-        return CharacterDto(
-            id = type.id,
-            name = type.name,
-            comics = type.comics,
-            description = type.description,
-            series = type.series,
-            stories = type.stories,
-            modified = type.modified,
-            resourceURI = type.resourceURI,
-            thumbnail = type.thumbnail,
-            urls = type.urls
-        )
-    }
 }

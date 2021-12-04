@@ -23,10 +23,10 @@ class MarvelRepositoryImpl @Inject constructor(
                 if (result.isSuccessful) {
                     emit(State.Success(result.body()))
                 } else {
-                    emit(State.Error("Error"))
+                    emit(State.Error(Throwable()))
                 }
-            } catch (e: Exception) {
-                State.Error("Error")
+            } catch (e: Throwable) {
+                State.Error(e)
             }
         }
     }
@@ -35,13 +35,13 @@ class MarvelRepositoryImpl @Inject constructor(
         return flow {
             emit(State.Loading)
             try {
-                val characters = marvelApiService.getCharacters().body()?.data?.characterDtos
-                    ?.map { characterDto ->
-                        characterMapper.toModel(characterDto)
+                val characters = marvelApiService.getCharacters().body()?.data?.results
+                    ?.map {
+                        characterMapper.map(it)
                     }
                 emit(State.Success(characters))
             }catch (error: Throwable){
-                emit(State.Error("${error.message}"))
+                emit(State.Error(error))
             }
         }
     }

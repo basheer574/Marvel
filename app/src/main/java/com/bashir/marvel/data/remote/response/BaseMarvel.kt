@@ -14,7 +14,7 @@ data class BaseMarvel<T>(
     @SerializedName("copyright")
     val copyright: String?,
     @SerializedName("data")
-    val data: T?,
+    val data: DataContainer<T>?,
     @SerializedName("etag")
     val etag: String?,
     @SerializedName("status")

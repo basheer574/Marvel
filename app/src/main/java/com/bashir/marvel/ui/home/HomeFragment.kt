@@ -10,7 +10,7 @@ import com.bashir.marvel.databinding.FragmentHomeBinding
 import com.bashir.marvel.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home){
     override val viewModel by activityViewModels<HomeViewModel>()
     override val bindingInflater: (LayoutInflater, Int, ViewGroup?, Boolean) -> FragmentHomeBinding

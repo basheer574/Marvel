@@ -17,7 +17,7 @@ abstract class MarvelDataBase  : RoomDatabase(){
         private const val databaseName = "MarvelDatabase"
         private var instance: MarvelDataBase? = null
 
-        fun init(context: Context): MarvelDataBase{
+        fun init(@ApplicationContext context: Context): MarvelDataBase{
             return instance?: synchronized(this)
             {buildDatabase(context).also{database-> instance = database}}
         }

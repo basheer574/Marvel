@@ -10,11 +10,9 @@ import com.bashir.marvel.databinding.FragmentCharaterShowMoreBinding
 import com.bashir.marvel.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
-
-@AndroidEntryPoint
 class CharacterFragment :
     BaseFragment<FragmentCharaterShowMoreBinding>(R.layout.fragment_charater_show_more) {
-    override val viewModel: CharacterViewModel by viewModels()
+    override val viewModel: CharacterViewModel by activityViewModels()
     override val bindingInflater: (LayoutInflater, Int, ViewGroup?, Boolean) ->
 
     FragmentCharaterShowMoreBinding = DataBindingUtil::inflate
@@ -22,7 +20,8 @@ class CharacterFragment :
     override fun setupView() {
         binding.let {
             it.viewModel = viewModel
-            it.characterRecyclerView.adapter = CharacterAdapter(mutableListOf(),viewModel)
+            it.characterRecyclerView.adapter =
+                CharacterAdapter(viewModel.character.value?.data ?: emptyList(), viewModel)
         }
     }
 }

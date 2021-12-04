@@ -34,6 +34,7 @@
             android:orientation="vertical"
             android:layout_margin="16dp"
             app:items="@{viewModel.character.data}"
+            tools:listitem="@layout/item_character_show_more"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2"
             app:layout_constraintBottom_toBottomOf="parent"

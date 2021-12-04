@@ -13,7 +13,6 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 object MarvelModule {
-
     @Provides
     fun provideRepository(
         marvelApiService: MarvelApiService,
@@ -24,5 +23,4 @@ object MarvelModule {
 
     @Provides
     fun provideCharacterMapper(): CharacterMapper = CharacterMapper()
-
 }
