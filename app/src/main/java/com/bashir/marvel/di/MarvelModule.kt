@@ -20,7 +20,4 @@ object MarvelModule {
     ): MarvelRepository {
         return MarvelRepositoryImpl(marvelApiService, characterMapper)
     }
-
-    @Provides
-    fun provideCharacterMapper(): CharacterMapper = CharacterMapper()
 }
