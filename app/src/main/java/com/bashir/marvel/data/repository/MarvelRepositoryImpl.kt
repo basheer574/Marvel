@@ -1,6 +1,7 @@
 package com.bashir.marvel.data.repository
 
 
+import com.bashir.marvel.data.mapper.base.Mappers
 import com.bashir.marvel.data.mapper.character.CharacterMapper
 import com.bashir.marvel.data.network.MarvelApiService
 import com.bashir.marvel.model.Character
@@ -13,7 +14,7 @@ import javax.inject.Inject
 
 class MarvelRepositoryImpl @Inject constructor(
     private val marvelApiService: MarvelApiService,
-    private val characterMapper: CharacterMapper
+    private val mappers: Mappers
 ) : MarvelRepository {
 
     private fun <T> wrapWithFlow(endPointResponse: suspend () -> Response<T>): Flow<State<T?>> {
@@ -38,7 +39,7 @@ class MarvelRepositoryImpl @Inject constructor(
             try {
                 val characters = marvelApiService.getCharacters().body()?.data?.results
                     ?.map {
-                        characterMapper.map(it)
+                        mappers.getCharacterMapper().map(it)
                     }
                 emit(State.Success(characters))
             }catch (error: Throwable){
