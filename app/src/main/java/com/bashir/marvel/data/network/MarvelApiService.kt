@@ -13,10 +13,10 @@ interface MarvelApiService {
     @GET("characters")
     suspend fun getCharacters() : Response<BaseMarvel<CharacterDto>>
 
-    @GET("v1/public/comics")
+    @GET("comics")
     suspend fun getComics() : Response<BaseMarvel<ComicsDto>>
 
-    @GET("v1/public/series")
+    @GET("series")
     suspend fun getSeries() : Response<BaseMarvel<SeriesDto>>
 
     @GET("v1/public/stories")
