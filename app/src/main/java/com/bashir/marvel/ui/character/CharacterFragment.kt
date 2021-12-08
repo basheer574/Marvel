@@ -20,8 +20,7 @@ class CharacterFragment :
     override fun setupView() {
         binding.let {
             it.viewModel = viewModel
-            it.characterRecyclerView.adapter =
-                CharacterAdapter(viewModel.character.value?.data ?: emptyList(), viewModel)
+            it.characterRecyclerView.adapter = CharacterAdapter(mutableListOf(), viewModel)
         }
     }
 }

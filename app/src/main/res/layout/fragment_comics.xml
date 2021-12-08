@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
             name="viewModel"
-            type="com.bashir.marvel.ui.character.CharacterViewModel" />
+            type="com.bashir.marvel.ui.comics.ComicsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="@string/characters"
+            android:text="@string/comics"
+            android:gravity="center"
             android:fontFamily="@font/marvel_bold"
             android:textColor="@color/app_color"
             android:textSize="25sp"
@@ -28,15 +28,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/character_recycler_view"
+            android:id="@+id/comics_recycler_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:orientation="vertical"
             android:layout_margin="16dp"
-            app:items="@{viewModel.character.data}"
-            tools:listitem="@layout/item_character_show_more"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:itemsPaging="@{viewModel.comics.data}"
+            tools:listitem="@layout/item_comics"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

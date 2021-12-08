@@ -16,7 +16,7 @@
         android:title=""
         android:icon="@drawable/ic_tv"
         />
-    <item android:id="@+id/storiesFragment"
+    <item android:id="@+id/comicsFragment"
         android:title=""
         android:icon="@drawable/ic_stories"
         />

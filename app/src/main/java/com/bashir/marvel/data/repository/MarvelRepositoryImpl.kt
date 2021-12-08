@@ -1,6 +1,8 @@
 package com.bashir.marvel.data.repository
 
 
+import androidx.paging.PagingSource
+import androidx.paging.PagingState
 import com.bashir.marvel.data.mapper.base.Mappers
 import com.bashir.marvel.data.mapper.character.CharacterMapper
 import com.bashir.marvel.data.network.MarvelApiService
@@ -12,12 +14,13 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import retrofit2.Response
+import java.io.IOException
 import javax.inject.Inject
 
 class MarvelRepositoryImpl @Inject constructor(
     private val marvelApiService: MarvelApiService,
     private val mappers: Mappers
-) : MarvelRepository {
+) : MarvelRepository{
 
     private fun <T> wrapWithFlow(endPointResponse: suspend () -> Response<T>): Flow<State<T?>> {
         return flow {
@@ -57,7 +60,7 @@ class MarvelRepositoryImpl @Inject constructor(
                     mappers.getComicsMapper().map(it)
                 }
                 emit(State.Success(comics))
-            }catch (error: Throwable){
+            } catch (error: Throwable) {
                 emit(State.Error(error))
             }
         }
@@ -71,9 +74,10 @@ class MarvelRepositoryImpl @Inject constructor(
                     mappers.getSeriesMapper().map(it)
                 }
                 emit(State.Success(series))
-            }catch (error: Throwable){
+            } catch (error: Throwable) {
                 emit(State.Error(error))
             }
         }
     }
+
 }

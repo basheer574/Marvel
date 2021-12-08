@@ -7,6 +7,7 @@ import com.bashir.marvel.data.remote.response.series.SeriesDto
 import com.bashir.marvel.data.remote.response.stories.StoriesDto
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 
 interface MarvelApiService {

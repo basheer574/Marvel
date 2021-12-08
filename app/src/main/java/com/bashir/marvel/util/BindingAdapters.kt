@@ -10,6 +10,7 @@ import coil.transform.RoundedCornersTransformation
 import coil.transform.Transformation
 import com.bashir.marvel.R
 import com.bashir.marvel.ui.base.BaseAdapter
+import com.bashir.marvel.ui.base.PagingBaseAdapter
 
 @BindingAdapter(value = ["app:showOnLoading"])
 fun <T> showOnLoading(view: View, state: State<T>?) {
@@ -41,6 +42,14 @@ fun <T> setRecyclerItems(view: RecyclerView, items: List<T>?) {
         (view.adapter as BaseAdapter<T>?)?.setItems(items)
     } else {
         (view.adapter as BaseAdapter<T>?)?.setItems(emptyList())
+    }
+}
+@BindingAdapter(value = ["app:itemsPaging"])
+fun <T> setRecyclerItemsPaging(view: RecyclerView, items: List<T>?) {
+    if (items != null) {
+        (view.adapter as PagingBaseAdapter<T>?)?.setItems(items)
+    } else {
+        (view.adapter as PagingBaseAdapter<T>?)?.setItems(emptyList())
     }
 }
 @BindingAdapter(value = ["imageUrl"])

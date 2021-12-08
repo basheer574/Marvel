@@ -12,5 +12,9 @@
         android:id="@+id/characterFragment"
         android:name="com.bashir.marvel.ui.character.CharacterFragment"
         android:label="CharacterFragment" />
+    <fragment
+        android:id="@+id/comicsFragment"
+        android:name="com.bashir.marvel.ui.comics.ComicsFragment"
+        android:label="ComicsFragment" />
 
 </navigation>
