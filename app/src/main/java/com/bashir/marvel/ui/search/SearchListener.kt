@@ -1,7 +1,7 @@
 package com.bashir.marvel.ui.search
 
-import com.bashir.marvel.ui.base.PagingBaseAdapter
+import com.bashir.marvel.ui.base.BaseAdapter
 
-interface SearchListener : PagingBaseAdapter.BaseInteractionListener {
+interface SearchListener : BaseAdapter.BaseInteractionListener {
    fun onSearchItemClick(id: Int?)
 }

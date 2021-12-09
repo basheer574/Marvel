@@ -7,6 +7,7 @@ import androidx.fragment.app.activityViewModels
 import com.bashir.marvel.R
 import com.bashir.marvel.databinding.FragmentSearchBinding
 import com.bashir.marvel.ui.base.BaseFragment
+import com.bashir.marvel.ui.character.CharacterAdapter
 
 class SearchFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment_search) {
     override val viewModel: SearchViewModel by activityViewModels()
@@ -14,6 +15,9 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment_sea
         = DataBindingUtil::inflate
 
     override fun setupView() {
-
+        binding.let {
+            it.viewModel = viewModel
+            it.searchRecyclerView.adapter = SearchAdapter(mutableListOf(),viewModel)
+        }
     }
 }
