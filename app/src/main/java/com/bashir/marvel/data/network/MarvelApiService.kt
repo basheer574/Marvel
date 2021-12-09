@@ -12,14 +12,16 @@ import retrofit2.http.Query
 
 interface MarvelApiService {
     @GET("characters")
-    suspend fun getCharacters() : Response<BaseMarvel<CharacterDto>>
+    suspend fun getCharacters(): Response<BaseMarvel<CharacterDto>>
 
     @GET("comics")
-    suspend fun getComics() : Response<BaseMarvel<ComicsDto>>
+    suspend fun getComics(): Response<BaseMarvel<ComicsDto>>
 
     @GET("series")
-    suspend fun getSeries() : Response<BaseMarvel<SeriesDto>>
+    suspend fun getSeries(): Response<BaseMarvel<SeriesDto>>
 
-    @GET("v1/public/stories")
-    suspend fun getStories() : Response<BaseMarvel<StoriesDto>>
+    @GET("characters")
+    suspend fun getCharacterSearch(
+        @Query("name") name: String?
+    ): Response<BaseMarvel<CharacterDto>>
 }

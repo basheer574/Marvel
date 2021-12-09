@@ -11,4 +11,5 @@ interface MarvelRepository {
     fun getCharacters() : Flow<State<List<Character>?>>
     fun getComics(): Flow<State<List<Comics>?>>
     fun getSeries(): Flow<State<List<Series>?>>
+    fun getCharacterBySearch(name: String): Flow<State<List<Character>?>>
 }

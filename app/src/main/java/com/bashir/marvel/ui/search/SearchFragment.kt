@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModel
 import com.bashir.marvel.R
 import com.bashir.marvel.databinding.FragmentSearchBinding
 import com.bashir.marvel.ui.base.BaseFragment

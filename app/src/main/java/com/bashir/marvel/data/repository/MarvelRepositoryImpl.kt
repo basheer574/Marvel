@@ -1,6 +1,7 @@
 package com.bashir.marvel.data.repository
 
 
+import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.bashir.marvel.data.mapper.base.Mappers
@@ -20,7 +21,7 @@ import javax.inject.Inject
 class MarvelRepositoryImpl @Inject constructor(
     private val marvelApiService: MarvelApiService,
     private val mappers: Mappers
-) : MarvelRepository{
+) : MarvelRepository {
 
     private fun <T> wrapWithFlow(endPointResponse: suspend () -> Response<T>): Flow<State<T?>> {
         return flow {
@@ -80,4 +81,19 @@ class MarvelRepositoryImpl @Inject constructor(
         }
     }
 
+    override fun getCharacterBySearch(name: String): Flow<State<List<Character>?>> {
+        return flow {
+            emit(State.Loading)
+            try {
+                val characters =
+                    marvelApiService.getCharacterSearch(name).body()?.data?.results?.map {
+                        mappers.getCharacterMapper().map(it)
+                    }
+                emit(State.Success(characters))
+            } catch (error: Throwable) {
+                emit(State.Error(error))
+                Log.i("MARVEL_REPO_IMPL", error.message.toString())
+            }
+        }
+    }
 }
