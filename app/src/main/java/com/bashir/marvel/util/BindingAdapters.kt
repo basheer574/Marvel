@@ -44,14 +44,6 @@ fun <T> setRecyclerItems(view: RecyclerView, items: List<T>?) {
         (view.adapter as BaseAdapter<T>?)?.setItems(emptyList())
     }
 }
-@BindingAdapter(value = ["app:itemsPaging"])
-fun <T> setRecyclerItemsPaging(view: RecyclerView, items: List<T>?) {
-    if (items != null) {
-        (view.adapter as PagingBaseAdapter<T>?)?.setItems(items)
-    } else {
-        (view.adapter as PagingBaseAdapter<T>?)?.setItems(emptyList())
-    }
-}
 @BindingAdapter(value = ["imageUrl"])
 fun setImageFromUrl(view: ImageView,url: String?){
     view.load(url){

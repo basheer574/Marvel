@@ -9,12 +9,12 @@ import java.io.IOException
 
 class ComicsPagingSource(private val marvelApiService: MarvelApiService) :
     PagingSource<Int, ComicsDto>() {
-    private val currentPage = 1
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ComicsDto> {
-        val page = params.key ?: currentPage
+        val currentPage = params.key ?: 1
+
         return try {
-            val response = marvelApiService.getComicsWithPaging(page)
+            val response = marvelApiService.getComicsWithPaging(currentPage)
             val responseDataList = mutableListOf<ComicsDto>()
             val data = response.body()?.data?.results?: mutableListOf()
             responseDataList.addAll(data)
@@ -22,7 +22,7 @@ class ComicsPagingSource(private val marvelApiService: MarvelApiService) :
             LoadResult.Page(
                 data = responseDataList,
                 prevKey = if(currentPage==1) null else -1,
-                nextKey = currentPage.plus(1)
+                nextKey = currentPage.plus(19)
             )
         } catch (exception: IOException) {
             return LoadResult.Error(exception)

@@ -9,12 +9,12 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CharacterDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addCharacters(items: List<CharacterEntity>)
-
-    @Query("SELECT * FROM CHARACTERS")
-    suspend fun getCharacters(): Flow<List<CharacterEntity>>
-
-    @Query("SELECT * FROM CHARACTERS")
-    suspend fun getCharacterToMap(): List<CharacterEntity>
+//    @Insert(onConflict = OnConflictStrategy.REPLACE)
+//    suspend fun addCharacters(items: List<CharacterEntity>)
+//
+//    @Query("SELECT * FROM CHARACTERS")
+//    suspend fun getCharacters(): Flow<List<CharacterEntity>>
+//
+//    @Query("SELECT * FROM CHARACTERS")
+//    suspend fun getCharacterToMap(): List<CharacterEntity>
 }

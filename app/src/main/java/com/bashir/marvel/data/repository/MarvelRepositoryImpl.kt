@@ -25,7 +25,6 @@ class MarvelRepositoryImpl @Inject constructor(
     private val marvelApiService: MarvelApiService,
     private val mappers: Mappers
 ) : MarvelRepository {
-    private val characterDao = MarvelDataBase.getInstance().marvelCharacterDao()
 
     private fun <T> wrapWithFlow(endPointResponse: suspend () -> Response<T>): Flow<State<T?>> {
         return flow {
