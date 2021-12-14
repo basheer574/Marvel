@@ -13,5 +13,8 @@ interface CharacterDao {
     suspend fun addCharacters(items: List<CharacterEntity>)
 
     @Query("SELECT * FROM CHARACTERS")
-    fun getCharacters(): Flow<List<CharacterEntity>>
+    suspend fun getCharacters(): Flow<List<CharacterEntity>>
+
+    @Query("SELECT * FROM CHARACTERS")
+    suspend fun getCharacterToMap(): List<CharacterEntity>
 }

@@ -60,3 +60,11 @@ fun setImageFromUrl(view: ImageView,url: String?){
         transformations(CircleCropTransformation())
     }
 }
+@BindingAdapter(value = ["imagePath","imageExtension"])
+fun setImageFromUrlWithExtension(view: ImageView,imagePath: String?,imageExtension: String?) {
+    view.load("${imagePath}.${imageExtension}") {
+        crossfade(true)
+        placeholder(R.drawable.ic_image_place_holder)
+        transformations(CircleCropTransformation())
+    }
+}

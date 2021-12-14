@@ -24,4 +24,9 @@ interface MarvelApiService {
     suspend fun getCharacterSearch(
         @Query("nameStartsWith") name: String?
     ): Response<BaseMarvel<CharacterDto>>
+
+    @GET("comics")
+    suspend fun getComicsWithPaging(
+        @Query("count")count: Int
+    ): Response<BaseMarvel<ComicsDto>>
 }

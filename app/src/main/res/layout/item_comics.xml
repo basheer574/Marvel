@@ -5,7 +5,7 @@
     <data>
         <variable
             name="item"
-            type="com.bashir.marvel.model.Comics" />
+            type="com.bashir.marvel.data.remote.response.comics.ComicsDto" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -24,7 +24,8 @@
                 android:layout_width="100dp"
                 android:layout_height="150dp"
                 android:layout_margin="16dp"
-                imageUrl="@{item.imageUrl}"
+                imagePath="@{item.thumbnail.path}"
+                imageExtension="@{item.thumbnail.extension}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

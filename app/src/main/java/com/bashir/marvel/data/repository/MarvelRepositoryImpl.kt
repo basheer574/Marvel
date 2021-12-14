@@ -2,14 +2,17 @@ package com.bashir.marvel.data.repository
 
 
 import android.util.Log
-import androidx.paging.PagingSource
-import androidx.paging.PagingState
+import androidx.paging.*
+import com.bashir.marvel.data.local.MarvelDataBase
+import com.bashir.marvel.data.local.entity.CharacterEntity
 import com.bashir.marvel.data.mapper.base.Mappers
 import com.bashir.marvel.data.mapper.character.CharacterMapper
 import com.bashir.marvel.data.network.MarvelApiService
+import com.bashir.marvel.data.remote.response.comics.ComicsDto
 import com.bashir.marvel.model.Character
 import com.bashir.marvel.model.Comics
 import com.bashir.marvel.model.Series
+import com.bashir.marvel.paging.ComicsPagingSource
 import com.bashir.marvel.util.State
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -22,6 +25,7 @@ class MarvelRepositoryImpl @Inject constructor(
     private val marvelApiService: MarvelApiService,
     private val mappers: Mappers
 ) : MarvelRepository {
+    private val characterDao = MarvelDataBase.getInstance().marvelCharacterDao()
 
     private fun <T> wrapWithFlow(endPointResponse: suspend () -> Response<T>): Flow<State<T?>> {
         return flow {
@@ -95,5 +99,12 @@ class MarvelRepositoryImpl @Inject constructor(
                 Log.i("MARVEL_REPO_IMPL", error.message.toString())
             }
         }
+    }
+
+    override fun getComicsByPaging(pagingConfig: PagingConfig): Flow<PagingData<ComicsDto>> {
+        return Pager(
+            config = pagingConfig,
+            pagingSourceFactory = {ComicsPagingSource(marvelApiService)}
+        ).flow
     }
 }
